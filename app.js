@@ -4,7 +4,6 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const dotenv = require("dotenv");
-const PORT = 3000;
 const mongoose = require('mongoose');
 const swaggerUi = require('swagger-ui-express');
 const fs = require('fs');
@@ -33,6 +32,7 @@ const db = new sqlite3.Database(path.join(__dirname, 'data','db.sqlite'));
 const apiRouter = require('./routes/api');
 const gameRouter = require('./routes/game');
 
+const PORT = process.env.PORT;
                                                            
 const app = express();
 
